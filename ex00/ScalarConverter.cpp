@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/22 16:01:11 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:55:56 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,18 @@ bool ScalarConverter::isNumber(std::string str)
 	{
 		while(str[++i])
 		{
-			if (str[i] < 48 || str[i] > 57)
+			if (str[i] < '0' || str[i] > '9')
 				return (false);
-			else
-				return (true);
 		}
+		return (true);
 	}
 	else
 	{
+		if ((str[str.length() - 1] >= 97 && str[str.length() - 1] <= 122) && str[str.length() - 1] != 102)
+			return (false);
 		while(str[++i])
-		{
-			if (str[i] == '.' && str[str.length() - 1] != 'f')
+			if ((str[i] < 48 || str[i] > 57) && str[i] != 102 && str[i] != 46)
 				return (false);
-			if ((str[i] < 48 || str[i] > 57) && str[i] != 'f' && str[i] != '.')
-				return (false);
-		}
 	}
 
 	return (true);
