@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:30:40 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/22 11:22:02 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/22 13:56:55 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <sstream>
 #include <cmath>
+#include <cstring>
 
 class ScalarConverter
 {
@@ -29,4 +30,5 @@ class ScalarConverter
 	public:
 
 		static void convert(std::string value);
+		static bool isNumber(std::string str);
 };
