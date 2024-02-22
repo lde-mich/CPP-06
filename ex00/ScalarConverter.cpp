@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/22 10:58:34 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:51:36 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,37 @@ void ScalarConverter::convert(std::string str)
 	ss << str;
 	ss >> intValue;
 
-	if (intValue == 0 || std::atof(str.c_str()))
+	float floatValue;
+	floatValue = std::atof(str.c_str());
+
+	// CHAR
+
+	if (intValue == 0 || floatValue != std::floor(floatValue))
 		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: " << (char)intValue << std::endl;
 
+	//____________________________________________________________
+	
+
+	//INT
+	
 	std::cout << "int: " << intValue << std::endl;
+	
+	//___________________________________________________________
 
 
+	//FLOAT
+	
+	if(floatValue == std::floor(floatValue))
+	{
+		floatValue = intValue;
+		std::cout << "float: " << floatValue <<std::endl;
+	}
+	else
+		std::cout << "float: " << floatValue<< std::endl;
+
+	//___________________________________________________________
 
 
 }
