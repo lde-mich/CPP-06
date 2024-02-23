@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/22 22:55:56 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/23 12:42:47 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void ScalarConverter::convert(std::string str)
 {
 	std::stringstream ss;
 
+	std::string specials[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
+
 	if (ScalarConverter::isNumber(str) == true)
 	{
 		int intValue;
@@ -114,6 +116,19 @@ void ScalarConverter::convert(std::string str)
 			std::cout << "double: " << floatValue << std::endl;
 
 		//____________________________________________________________
+	}
+	else
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			if (specials[i] == str)
+			{
+				std::cout << "char: impossible" << std::endl;
+				std::cout << "int: impossible" << std::endl;
+				std::cout << "float: nanf" << std::endl;
+				std::cout << "double: nan" << std::endl;
+			}
+		}
 	}
 }
 
