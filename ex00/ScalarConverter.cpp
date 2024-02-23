@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/23 14:21:36 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:48:08 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ bool ScalarConverter::isNumber(std::string str)
 	{
 		while(str[++i])
 		{
-			if (str[i] < '0' || str[i] > '9')
+			if ((str[i] < '0' || str[i] > '9') && (str[i] != '+' && str[i] != '-'))
 				return (false);
 		}
 		return (true);
@@ -145,25 +145,10 @@ void ScalarConverter::convert(std::string str)
 				std::cout << "double: nan" << std::endl;
 			}
 		}
+
+		//____________________________________________________________
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
