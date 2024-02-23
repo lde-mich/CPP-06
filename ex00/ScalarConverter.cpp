@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/23 12:42:47 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:21:36 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,11 @@ void ScalarConverter::convert(std::string str)
 		// CHAR
 
 		if (intValue == 0 || floatValue != std::floor(floatValue))
-			std::cout << "char: Non displayable" << std::endl;
+			std::cout << "char: non displayable" << std::endl;
+		else if (intValue < 0 || intValue >= 128)
+			std::cout << "char: impossible" << std::endl;
+		else if (intValue < 32 || intValue == 127)
+			std::cout << "char: non displayable" << std::endl;
 		else
 			std::cout << "char: " << (char)intValue << std::endl;
 
@@ -92,33 +96,45 @@ void ScalarConverter::convert(std::string str)
 		
 
 		//INT
-		
-		std::cout << "int: " << intValue << std::endl;
+		if (str.length() > 10)
+			std::cout << "int: impossible" << std::endl;
+		else
+			std::cout << "int: " << intValue << std::endl;
 		
 		//____________________________________________________________
 
 
 		//FLOAT
-		
-		if(floatValue == std::floor(floatValue))
-			std::cout << "float: " << intValue << ".0f" << std::endl;
+	
+		if (str.length() <= 38)
+		{
+			if(floatValue == std::floor(floatValue))
+				std::cout << "float: " << intValue << ".0f" << std::endl;
+			else
+				std::cout << "float: " << floatValue<< "f" << std::endl;
+		}
 		else
-			std::cout << "float: " << floatValue<< "f" << std::endl;
+			std::cout << "float: impossible" << std::endl;
 
 		//____________________________________________________________
 
 
 		//DOUBLE
-		
-		if(floatValue == std::floor(floatValue))
-			std::cout << "double: " << intValue << ".0" << std::endl;
+		if (str.length() <= 308)
+		{
+			if(floatValue == std::floor(floatValue))
+				std::cout << "double: " << intValue << ".0" << std::endl;
+			else
+				std::cout << "double: " << floatValue << std::endl;
+		}
 		else
-			std::cout << "double: " << floatValue << std::endl;
+			std::cout << "double: impossible" << std::endl;
 
 		//____________________________________________________________
 	}
 	else
 	{
+		//SPECIALS
 		for (int i = 0; i < 6; i++)
 		{
 			if (specials[i] == str)
