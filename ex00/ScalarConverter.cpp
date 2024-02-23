@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/23 16:10:35 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/23 19:13:57 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,8 +141,17 @@ void ScalarConverter::convert(std::string str)
 			{
 				std::cout << "char: impossible" << std::endl;
 				std::cout << "int: impossible" << std::endl;
-				std::cout << "float: nanf" << std::endl;
-				std::cout << "double: nan" << std::endl;
+
+				if (str == specials[5] || str == specials[2])
+				{
+					std::cout << "float: nanf" << std::endl;
+					std::cout << "double: nan" << std::endl;
+				}
+				else
+				{
+					std::cout << "float: " << specials[i] << std::endl;
+					std::cout << "double: " << specials[i] << std::endl;
+				}
 			}
 		}
 
