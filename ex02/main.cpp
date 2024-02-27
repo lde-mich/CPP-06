@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 14:16:10 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/27 14:55:38 by lde-mich         ###   ########.fr       */
+/*   Created: 2024/02/27 15:42:04 by lde-mich          #+#    #+#             */
+/*   Updated: 2024/02/27 15:46:10 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include "Base.hpp"
 
-class Base
+int main ()
 {
-	public:
-		Base *generate(void);
-		void identify(Base *p);
-		void identify(Base &p);
+	Base *obj;
 
-		Base();
-		virtual ~Base();
-};
+	srand(time(NULL));
+	obj = generate();
+	identify(obj);
+	identify(*obj);
+
+	return (0);
+}
+
+
 
 
 
