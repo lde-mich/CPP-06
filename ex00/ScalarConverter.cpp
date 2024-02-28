@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:31:31 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/23 19:13:57 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:57:48 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void ScalarConverter::convert(std::string str)
 		
 
 		//INT
-		if (str.length() > 10)
+		if (str.length() > 10 || (str.length() == 10 && str[str.length() - 1] > 55))
 			std::cout << "int: impossible" << std::endl;
 		else
 			std::cout << "int: " << intValue << std::endl;

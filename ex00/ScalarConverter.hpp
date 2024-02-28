@@ -6,7 +6,7 @@
 /*   By: lde-mich <lde-mich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:30:40 by lde-mich          #+#    #+#             */
-/*   Updated: 2024/02/22 13:56:55 by lde-mich         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:38:23 by lde-mich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <sstream>
 #include <cmath>
 #include <cstring>
+#include <limits.h>
 
 class ScalarConverter
 {
